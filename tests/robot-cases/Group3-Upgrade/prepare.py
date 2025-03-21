@@ -582,7 +582,7 @@ class HarborAPI:
             raise Exception(r"Error: Feature {} has no branch {}.".format(sys._getframe().f_code.co_name, kwargs["branch"]))
 
     @get_feature_branch
-    def get_ca(self, target='/Users/daojunz/Downloads/harbor/ca/ca.crt', **kwargs):
+    def get_ca(self, target='/harbor/ca/ca.crt', **kwargs):
         if kwargs["branch"] == 1:
             url = "https://" + args.endpoint + "/api/systeminfo/getcert"
         elif kwargs["branch"] == 2:
@@ -670,9 +670,9 @@ def do_data_creation():
     harborAPI.populate_projects("projects", version=args.version)
     harborAPI.populate_quotas(version=args.version)
 
-    # harborAPI.push_artifact_index(data["projects"][0]["name"], data["projects"][0]["artifact_index"]["name"], data["projects"][0]["artifact_index"]["tag"], version=args.version)
+    harborAPI.push_artifact_index(data["projects"][0]["name"], data["projects"][0]["artifact_index"]["name"], data["projects"][0]["artifact_index"]["tag"], version=args.version)
     #pull_image("busybox", "redis", "haproxy", "alpine", "httpd:2")
-    # push_self_build_image_to_project(data["projects"][0]["name"], args.endpoint, 'admin', 'Harbor12345', "busybox", "latest")
+    push_self_build_image_to_project(data["projects"][0]["name"], args.endpoint, 'admin', 'Harbor12345', "busybox", "latest")
 
     for replicationrule in data["replicationrule"]:
         harborAPI.add_replication_rule(replicationrule, version=args.version)
