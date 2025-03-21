@@ -355,9 +355,9 @@ class HarborAPI:
         r = request(url+"projects?name="+project+"", 'get')
         projectid = str(r.json()[0]['project_id'])
         create_url = url
-        printf("robot_account:", robot_account)
-        printf("branch:", kwargs["branch"])
-        printf("version:", kwargs["version"])
+        print("robot_account:", robot_account)
+        print("branch:", kwargs["branch"])
+        print("version:", kwargs["version"])
         if kwargs["branch"] == 1:
             create_url = url+"projects/"+projectid+"/robots"
             if len(robot_account["access"]) == 1:
