@@ -94,8 +94,8 @@ BUILD_BASE=true
 PUSHBASEIMAGE=false
 BASEIMAGETAG=dev
 BUILDBASETARGET=trivy-adapter core db jobservice log nginx portal prepare redis registry registryctl exporter
-IMAGENAMESPACE=ka1i137
-BASEIMAGENAMESPACE=ka1i137
+IMAGENAMESPACE=registry.cn-chengdu.aliyuncs.com/qweraaa
+BASEIMAGENAMESPACE=registry.cn-chengdu.aliyuncs.com/qweraaa
 # #input true/false only
 PULL_BASE_FROM_DOCKERHUB=true
 
