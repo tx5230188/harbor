@@ -222,7 +222,7 @@ define _build_base
 	if [ "$(BUILD_BASE)" = "true" ] ; then \
 		echo "building base image for $(1)...";\
 		if [ -n "$(REGISTRYUSER)"  ] && [ -n "$(REGISTRYPASSWORD)" ] ; then \
-			docker login -u $(REGISTRYUSER) -p $(REGISTRYPASSWORD) ; \
+			docker login registry.cn-chengdu.aliyuncs.com -u $(REGISTRYUSER) -p $(REGISTRYPASSWORD) ; \
 		else \
 			echo "No docker credentials provided, please be aware of privileges to access docker hub!" ; \
 		fi ;\

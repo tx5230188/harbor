@@ -13,7 +13,7 @@ jobs:
     env:
         BUILD_PACKAGE: true
     runs-on:
-      - ubuntu-22.04-arm
+      - ubuntu-22.04-arms
     steps:
       - name: Set up Go 1.22
         uses: actions/setup-go@v5
