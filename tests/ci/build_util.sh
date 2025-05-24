@@ -20,7 +20,7 @@ function publishImage {
     fi
     # rename the images with tag "dev" and push to Docker Hub
     docker images
-    docker login -u $3 -p $4
+    docker login registry.cn-chengdu.aliyuncs.com -u $3 -p $4
     docker images | grep goharbor | grep -v "\-base" | sed -n "s|\(goharbor/[-._a-z0-9]*\)\s*\(.*$2\).*|docker tag \1:\2 \1:$image_tag;docker push \1:$image_tag|p" | bash
     echo "Images are published successfully"
     docker images
